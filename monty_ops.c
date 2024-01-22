@@ -3,11 +3,14 @@
  * push - Pushes an element onto the stack
  * @stack: Double pointer to the head of the stack
  * @value: Value to be pushed onto the stack
+ * @line_number: line number
  */
-void push(stack_t **stack, const char *value, unsigned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
+	const char *value = 0;
 	stack_t *new_node;
 	int int_value = atoi(value);
+
 	if (int_value == 0 && *value != '0')
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
@@ -49,9 +52,11 @@ void pall(stack_t **stack, unsigned int line_number)
  */
 void free_stack(stack_t *stack)
 {
+	stack_t *temp;
+
 	while (stack != NULL)
 	{
-		stack_t *temp = stack;
+		temp = stack;
 		stack = stack->next;
 		free(temp);
 	}
