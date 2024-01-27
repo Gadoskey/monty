@@ -49,7 +49,7 @@ void push()
 	int data;
 	printf("Enter the element to be inserted: ");
 	scanf("%d", &data);
-	struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+	struct Node *newNode = (struct Node*)malloc(sizeof(struct Node));
 	if (newNode == NULL)
 	{
 		printf("Memory allocation error (Stack overflow)\n");

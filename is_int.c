@@ -7,6 +7,7 @@
 int is_integer(const char *str)
 {
 	int i;
+
 	if (!str)
 		return (0);
 	i = 0;
